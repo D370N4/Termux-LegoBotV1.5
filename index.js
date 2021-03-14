@@ -20,8 +20,8 @@ const tiktod = require('tiktok-scraper')
 const ffmpeg = require('fluent-ffmpeg')
 const { removeBackgroundFromImageFile } = require('remove.bg')
 const imgbb = require('imgbb-uploader')
-const Loli = require('lolis.life')
-const loli = new Loli()
+const Lolis = require('lolis.life')
+const loli = new Lolis()
 const welkom = JSON.parse(fs.readFileSync('./src/welkom.json'))
 const nsfw = JSON.parse(fs.readFileSync('./src/nsfw.json'))
 const samih = JSON.parse(fs.readFileSync('./src/simi.json'))
@@ -455,7 +455,7 @@ async function starts() {
 					buffer = await getBuffer(`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjVCGkGDxARumfloekQMCazM8uvpj2AgW2lg&usqp=CAU`)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: '👀️'})
 					break
-				case 'nsfwloli':
+				case 'nsfwloli1':
 					memein = await kagApi.memeindo()
 					buffer = await getBuffer(`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJhzKetbU3pzhoZdaIo6qBklCzwvmCCOznbg&usqp=CAU`)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Rum️'})
@@ -483,7 +483,7 @@ async function starts() {
 					break
 				case 'loli':
 				   try {
-				        res = await fetchJson(`https://api.lolis.life/random`, {method: 'get'})
+				        res = await fetchJson(`https://lolis.life`, {method: 'get'})
 					buffer = await getBuffer(res.url)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'heher boy🙉'})
 				   } catch (e) {
@@ -502,6 +502,16 @@ async function starts() {
 					reply('❌ ERROR ❌')
 				    }
 				 	break
+			        case 'nekonime':
+				    try {
+				        res = await fetchJson(`https://nekos.life`, {method: 'get'})
+					buffer = await getBuffer(res.result)
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'gtito'})
+				    } catch (e) {
+					console.log(`Error :`, color(e,'red'))
+					reply('❌ ERROR ❌')
+					}
+					break
 				case 'hilih':
 					if (args.length < 1) return reply('Cadê o texto, hum?')
 					anu = await fetchJson(`https://mhankbarbars.herokuapp.com/api/hilih?teks=${body.slice(7)}`, {method: 'get'})
