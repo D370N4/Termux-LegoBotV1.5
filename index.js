@@ -22,6 +22,8 @@ const { removeBackgroundFromImageFile } = require('remove.bg')
 const imgbb = require('imgbb-uploader')
 const Lolis = require('lolis.life')
 const loli = new Lolis()
+const client = require('nekos.life');
+const neko = new client();
 const welkom = JSON.parse(fs.readFileSync('./src/welkom.json'))
 const nsfw = JSON.parse(fs.readFileSync('./src/nsfw.json'))
 const samih = JSON.parse(fs.readFileSync('./src/simi.json'))
@@ -503,10 +505,10 @@ async function starts() {
 				    }
 				 	break
 			        case 'nekonime':
-				    try {
-				        res = await fetchJson(`https://nekos.life`, {method: 'get'})
+				    neko.nsfw.neko().then(neko => {console.log(neko);});
+					{ url: 'https://cdn.nekos.life/lewd/lewd_neko750.jpeg' }
 					buffer = await getBuffer(res.result)
-					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'gtito'})
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'gatito'})
 				    } catch (e) {
 					console.log(`Error :`, color(e,'red'))
 					reply('❌ ERROR ❌')
