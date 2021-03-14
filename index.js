@@ -485,7 +485,7 @@ async function starts() {
 					loli.getSFWLoli((error, loliJSONoutput) => {
 				        if (error) {console.error(error);} else {console.log(loliJSONoutput); 
                                       };	
-                                    });
+                                    };
 				        buffer = await getBuffer(res.url)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'heher boy🙉'})
 					})
