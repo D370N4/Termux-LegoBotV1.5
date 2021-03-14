@@ -482,9 +482,11 @@ async function starts() {
 					reply(`O prefixo foi alterado com sucesso para : ${prefix}`)
 					break
 				case 'loli':
-					loli.getSFWLoli((error, loliJSONoutput) => {
-				        if (error) {console.error(error);} else {console.log(loliJSONoutput);
-				        buffer = await getBuffer(res.url)
+					async function testAsync() {console.log(await loli.getSFWLoli());
+};
+ 
+testAsync();
+				        buffer = getBuffer(res.url)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'heher boy🙉'})
 					})
 					break
