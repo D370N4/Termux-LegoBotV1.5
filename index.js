@@ -482,20 +482,26 @@ async function starts() {
 					reply(`O prefixo foi alterado com sucesso para : ${prefix}`)
 					break
 				case 'loli':
-					loli.getSFWLoli(async (err, res) => {
-				        if (err) return reply('❌ ERROR ❌')
-				        buffer = await getBuffer(res.url)
+				   try {
+				        res = await fetchJson(`https://api.lolis.life/random`, {method: 'get'})
+					buffer = await getBuffer(res.url)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'heher boy🙉'})
-					})
+				   } catch (e) {
+					console.log(`Error :`, color(e,'red'))
+					reply('❌ ERROR ❌')
+			           }
 					break
-				case 'nsfwloli':
-					if (!isNsfw) return reply('❌ *FALSE* ❌')
-					loli.getNSFWLoli(async (err, res) => {
-						if (err) return reply('❌ *ERROR* ❌')
-						buffer = await getBuffer(res.url)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: '🤭'})
-					})
-					break
+				case 'nsfwloli': 
+				    try {
+					if (!isNsfw) return reply('❌ ERROR ❌')
+					res = await fetchJson(`https://api.lolis.life/random?nsfw=true`, {method: 'get'})
+					buffer = await getBuffer(res.url)
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'heher boy🙉'})
+				    } catch (e) {
+					console.log(`Error :`, color(e,'red'))
+					reply('❌ ERROR ❌')
+				    }
+				 	break
 				case 'hilih':
 					if (args.length < 1) return reply('Cadê o texto, hum?')
 					anu = await fetchJson(`https://mhankbarbars.herokuapp.com/api/hilih?teks=${body.slice(7)}`, {method: 'get'})
