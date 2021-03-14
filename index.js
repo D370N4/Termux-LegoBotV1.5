@@ -484,14 +484,13 @@ async function starts() {
 					reply(`O prefixo foi alterado com sucesso para : ${prefix}`)
 					break
 				case 'loli':
-				   try {
-				        res = await fetchJson(`https://lolis.life`, {method: 'get'})
+				    try {
+					res = await fetchJson(`https://api.lolis.life/random`, {method: 'get'})
 					buffer = await getBuffer(res.url)
-					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'heher boy🙉'})
-				   } catch (e) {
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Ingat! Citai Lolimu'})
 					console.log(`Error :`, color(e,'red'))
 					reply('❌ ERROR ❌')
-			           }
+					}
 					break
 				case 'nsfwloli': 
 				    try {
@@ -499,10 +498,9 @@ async function starts() {
 					res = await fetchJson(`https://api.lolis.life/random?nsfw=true`, {method: 'get'})
 					buffer = await getBuffer(res.url)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'heher boy🙉'})
-				    } catch (e) {
 					console.log(`Error :`, color(e,'red'))
 					reply('❌ ERROR ❌')
-				    }
+				        }
 				 	break
 				case 'nekos': 
 				    try {
@@ -510,16 +508,14 @@ async function starts() {
 					res = await fetchJson(`https://nekos.life`, {method: 'get'})
 					buffer = await getBuffer(res.url)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'heher boy🙉'})
-				    } catch (e) {
 					console.log(`Error :`, color(e,'red'))
 					reply('❌ ERROR ❌')
-				    }
+				        }
 				 	break
 			        case 'nekonime':
 				    nsfw.neko().then(neko => console.log(neko));
 					buffer = await getBuffer(res.result)
-					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'gatito'})
-				    } catch (e) {
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'gatito'}
 					console.log(`Error :`, color(e,'red'))
 					reply('❌ ERROR ❌')
 					}
