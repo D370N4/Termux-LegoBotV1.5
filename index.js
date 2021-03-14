@@ -482,12 +482,12 @@ async function starts() {
 					reply(`O prefixo foi alterado com sucesso para : ${prefix}`)
 					break
 				case 'loli':
-					loli.getSFWLoli().then((loliJSONoutput) => {
-				        console.log(loliJSONoutput); 
-                                     });
-						if (err) return reply('❌ *ERROR* ❌')
-						buffer = await getBuffer(res.url)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'heher boy🙉'})
+					loli.getSFWLoli((error, loliJSONoutput) => {
+				        if (error) {console.error(error);} else {console.log(loliJSONoutput); 
+                                      };	
+                                    });
+				        buffer = await getBuffer(res.url)
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'heher boy🙉'})
 					})
 					break
 				case 'nsfwloli':
