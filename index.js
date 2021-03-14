@@ -504,9 +504,19 @@ async function starts() {
 					reply('❌ ERROR ❌')
 				    }
 				 	break
+				case 'nekos': 
+				    try {
+					if (!isNsfw) return reply('❌ ERROR ❌')
+					res = await fetchJson(`https://nekos.life`, {method: 'get'})
+					buffer = await getBuffer(res.url)
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'heher boy🙉'})
+				    } catch (e) {
+					console.log(`Error :`, color(e,'red'))
+					reply('❌ ERROR ❌')
+				    }
+				 	break
 			        case 'nekonime':
-				    neko.nsfw.neko().then(neko => {console.log(neko);});
-					{ url: 'https://cdn.nekos.life/lewd/lewd_neko750.jpeg' }
+				    nsfw.neko().then(neko => console.log(neko));
 					buffer = await getBuffer(res.result)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'gatito'})
 				    } catch (e) {
