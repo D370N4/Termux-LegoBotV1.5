@@ -333,7 +333,7 @@ async function starts() {
                     if (!isGroup) return reply(mess.only.group)
                     ppUrl = await client.getProfilePicture(from) // leave empty to get your own
 			        buffer = await getBuffer(ppUrl)
-		            client.sendMessage(from, buffer, image, {quoted: mek, caption: `*NOME* : ${groupName}\n*DESCRIÇÃO* : ${groupDesc}`})
+		            client.sendMessage(from, buffer, image, {quoted: mek, caption: `*NOME* : ${groupName}\n\n*DESCRIÇÃO* : ${groupDesc}`})
                     break
 				case 'porno':
 					memein = await kagApi.memeindo()
@@ -718,7 +718,7 @@ async function starts() {
 						client.groupRemove(from, mentioned)
 					}
 					break
-				case 'listadmins':
+				case 'listadm':
 					if (!isGroup) return reply(mess.only.group)
 					teks = `Lista de admins do grupo *${groupMetadata.subject}*\nTotal : ${groupAdmins.length}\n\n`
 					no = 0
@@ -728,7 +728,7 @@ async function starts() {
 					}
 					mentions(teks, groupAdmins, true)
 					break
-                                case 'linkgroup':
+                                case 'linkgrupo':
                                         if (!isGroup) return reply(mess.only.group)
                                         if (!isGroupAdmins) return reply(mess.only.admin)
                                         if (!isBotGroupAdmins) return reply(mess.only.Badmin)
