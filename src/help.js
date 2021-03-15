@@ -59,10 +59,13 @@ const help = (prefix) => {
        *GRUPO*【✔】
        • ─── ✾ ─── •
       
-➸ Comando : *${prefix}linkgroup*
+➸ Comando : *${prefix}linkgrupo*
 ➸ útil em : enviar o link do grupo
 ➸ uso : basta enviar o comando\n
-➸ Comando : *${prefix}marcar*
+➸ Comando : *${prefix}infogrupo*
+➸ útil em : mostra o nome e a descriçao do grupo
+➸ uso : basta enviar o comando\n
+➸ Comando : *${prefix}marcar(1, 2 & 3)*
 ➸ útil em : marcar todos os membros do grupo, incluindo administradores
 ➸ uso : basta enviar o comando\n
 ➸ Nota : Você precisa ser administrador do grupo\n
