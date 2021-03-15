@@ -62,6 +62,9 @@ const help = (prefix) => {
 ➸ Comando : *${prefix}linkgrupo*
 ➸ útil em : enviar o link do grupo
 ➸ uso : basta enviar o comando\n
+➸ Comando : *${prefix}listadm*
+➸ útil em : mostra todos os adms do grupo
+➸ uso : basta enviar o comando\n
 ➸ Comando : *${prefix}infogrupo*
 ➸ útil em : mostra o nome e a descriçao do grupo
 ➸ uso : basta enviar o comando\n
