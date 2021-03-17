@@ -32,6 +32,8 @@
     "fluent-ffmpeg": "^2.1.2",
     "imgbb-uploader": "^1.1.0",
     "lolis.life": "^4.0.0",
+    "nhentai-api": "^3.0.2",
+    "nhentai-js": "^4.0.0",
     "node-gtts": "^2.0.2",
     "moment-timezone": "^0.5.32",
     "multistream": "^2.1.0",
