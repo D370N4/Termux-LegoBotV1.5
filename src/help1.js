@@ -11,6 +11,7 @@ const help1 = (prefix) => {
 ➸ *${prefix}marcar2*
 ➸ *${prefix}marcar3*
 ➸ *${prefix}loli1*
+➸ *${prefix}idioma*
 ➸ *${prefix}hentai*
 ➸ *${prefix}porno*
 ➸ *${prefix}boanoite*
